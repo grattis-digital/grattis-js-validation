@@ -1,0 +1,22 @@
+{
+    "name": "grattis-js-validation",
+    "version": "0.0.1",
+    "description": "A simple validation library",
+    "scripts": {
+        "build": "tsc",
+        "watch": "rm -rf ./dist && watch \"npm run build && webpack --config webpack.config.js --mode production\" ./src",
+        "reload": "npm run watch & reload -b"
+    },
+    "author": "Grattis Digital UG (haftungsbeschränkt)",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^20.5.7",
+        "minify": "^10.5.2",
+        "reload": "^3.2.1",
+        "ts-loader": "^9.4.4",
+        "typescript": "^5.2.2",
+        "watch": "^1.0.2",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4"
+    }
+}
