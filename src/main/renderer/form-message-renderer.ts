@@ -1,11 +1,12 @@
-import { FormAlertMessageConf } from "./form-alert-conf.type";
+import { FormAlertMessageConf } from "../conf/form-alert-conf.type";
+import { HTMLCheckboxElement } from "../form/html-check-box-element";
 import { ValidationRenderer } from "./validation-renderer.interface";
 
 
 export class FormMessageRenderer implements ValidationRenderer<string[]> {
 
     constructor(
-        private el: HTMLInputElement | HTMLTextAreaElement,
+        private el: HTMLInputElement | HTMLTextAreaElement | HTMLCheckboxElement,
         private alertClassConf: FormAlertMessageConf,
         private $document: Document
     ) {}

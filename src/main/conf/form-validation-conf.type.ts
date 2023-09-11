@@ -1,9 +1,9 @@
 
 import { FormAlertClassConf } from "./form-alert-conf.type"
-import { Validator } from "./validator.interface"
+import { Validator } from "../validator/validator.interface"
 
 export type FormElementValidationConf = {
-    validatorList: Validator[],
+    validatorList: Validator<any>[],
     formElementName: string
 }
 

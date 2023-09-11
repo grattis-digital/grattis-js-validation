@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/validation.ts',  // your main TypeScript entry point
+  entry: './src/main/validation.ts',
   module: {
     rules: [
       {

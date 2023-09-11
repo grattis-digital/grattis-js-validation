@@ -7,15 +7,21 @@ export type LengthValidatorConf = {
     isolate?: boolean;
 }
 
-export class LengthValidator implements Validator {
+export class LengthValidator implements Validator<HTMLInputElement | HTMLTextAreaElement> {
+
 
     constructor(private conf: LengthValidatorConf) {}
+
+    supportsType(element: any): element is HTMLInputElement | HTMLTextAreaElement {
+        return element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement;
+    }
 
     isolate(): boolean {
         return this.conf.isolate ? this.conf.isolate : false;
     }
     
-    validate(value: string): ValidatorResult {  
+    validate(element: HTMLInputElement | HTMLTextAreaElement): ValidatorResult {  
+        const value = element.value;
         const isValidMinLength = this.conf.minLength ? value.length >= this.conf.minLength : true;
         const isValidMaxLength = this.conf.maxLength ? value.length < this.conf.maxLength : true; 
 

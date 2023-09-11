@@ -1,7 +1,7 @@
 import { FormValidationInitializer } from './form-validation-initializer';
-import { LengthValidator } from './length-validator';
-import { PatternValidator } from './pattern-validator';
-import { RequiredValidator } from './required-validator';
+import { LengthValidator } from './validator/length-validator';
+import { PatternValidator } from './validator/pattern-validator';
+import { RequiredValidator } from './validator/required-validator';
 
 const formValidationConf = {
     formName: 'testForm',

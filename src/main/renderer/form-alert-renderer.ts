@@ -1,16 +1,18 @@
-import { FormAlertInputConf } from "./form-alert-conf.type";
+import { FormAlertInputConf } from "../conf/form-alert-conf.type";
+import { HTMLCheckboxElement } from "../form/html-check-box-element";
 import { ValidationRenderer } from "./validation-renderer.interface";
 
 export class FormAlertRenderer implements ValidationRenderer<void> {
 
     constructor(
-        private el: HTMLInputElement | HTMLTextAreaElement,
-        private alertClassConf: FormAlertInputConf
+        private el: HTMLInputElement | HTMLTextAreaElement | HTMLCheckboxElement,
+        private alertClassConf: FormAlertInputConf,
+        private $document: Document
     ) {}
 
     private getLabelElement(): Element | null {
         const id = this.el.id;
-        return document.querySelector(`label[for="${id}"]`); 
+        return this.$document.querySelector(`label[for="${id}"]`); 
     }
     
     render(): void {
